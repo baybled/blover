@@ -4,9 +4,12 @@
 sudo apt-get update
 sudo apt-get upgrade -y
 
-# Install Python and Bluetooth packages
+# Install Python, PIP, and Bluetooth packages
 sudo apt-get install python3 python3-pip bluetooth bluez libbluetooth-dev -y
-pip3 install pybluez
+pip3 install pybluez plover
+
+# Setup Plover
+# Here, add any necessary configuration or steps to setup Plover
 
 # Enable and start Bluetooth service
 sudo systemctl enable bluetooth
