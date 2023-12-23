@@ -4,6 +4,11 @@ blover is a Python application for Raspberry Pi that automatically connects to a
 
 ## Setup
 
+0. One liner of the below
+```
+sudo git clone https://github.com/baybled/blover.git && cd blover && sudo chmod +x setup.sh && sudo ./setup.sh
+```
+
 1. Clone this repository:
 ```
 git clone https://github.com/baybled/blover/
@@ -14,9 +19,10 @@ cd blover
 ```
 3. Run the setup script:
 ```
-chmod +x setup.sh
+sudo chmod +x setup.sh
 ./setup.sh
 ```
+
 
 ## Usage
 
