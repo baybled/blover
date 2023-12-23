@@ -1,6 +1,6 @@
-# Blover
+# blover
 
-Blover is a Python application for Raspberry Pi that automatically connects to a Bluetooth device and communicates with it.
+blover is a Python application for Raspberry Pi that automatically connects to a Bluetooth device and communicates with it.
 
 ## Setup
 
