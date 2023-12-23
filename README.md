@@ -8,12 +8,10 @@ Blover is a Python application for Raspberry Pi that automatically connects to a
 ```
 git clone https://github.com/baybled/blover/
 ```
-
 2. Navigate to the blover directory:
 ```
 cd blover
 ```
-
 3. Run the setup script:
 ```
 chmod +x setup.sh
@@ -22,5 +20,6 @@ chmod +x setup.sh
 
 ## Usage
 
-- The `blover.py` script will automatically find and connect to the first available Bluetooth device.
-- Customize `blover.py` as needed to send specific data over the Bluetooth connection.
+- The `blover.py` script will automatically handle Bluetooth communication.
+- The `blover_extension.py` extends Plover's translation module to send data via Bluetooth.
+- Customize as needed for specific use-cases.
