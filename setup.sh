@@ -5,19 +5,23 @@ sudo apt-get update
 sudo apt-get upgrade -y
 
 # Install Python, PIP, and Bluetooth packages
-sudo apt-get install python3 python3-pip bluetooth bluez libbluetooth-dev -y
-pip3 install pybluez plover
+sudo apt-get install python3 python3-pip bluetooth bluez libbluetooth-dev wget -y
+pip3 install pybluez
 
-# Setup Plover
-# Here, add any necessary configuration or steps to setup Plover
+# Setup and move blover.py to /opt/blover/
+sudo mkdir -p /opt/blover/
+sudo cp blover.py /opt/blover/
+sudo chmod +x /opt/blover/blover.py
 
 # Enable and start Bluetooth service
 sudo systemctl enable bluetooth
 sudo systemctl start bluetooth
 
-# Copy systemd service file
+# Setup systemd service for blover
 sudo cp blover.service /etc/systemd/system/
-
-# Reload systemd manager and enable blover service
 sudo systemctl daemon-reload
 sudo systemctl enable blover.service
+
+# Download and setup Plover
+wget -O /opt/plover.AppImage $(curl -s https://api.github.com/repos/openstenoproject/plover/releases/latest | grep browser_download_url | grep 'AppImage' | cut -d '"' -f 4)
+sudo chmod +x /opt/plover.AppImage
