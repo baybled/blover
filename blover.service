@@ -1,0 +1,11 @@
+[Unit]
+Description=Blover Service
+After=multi-user.target
+
+[Service]
+Type=simple
+User=dietpi
+ExecStart=/usr/bin/env python3 /home/dietpi/blover.py
+
+[Install]
+WantedBy=multi-user.target
