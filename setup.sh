@@ -25,3 +25,19 @@ sudo systemctl enable blover.service
 # Download and setup Plover
 wget -O /opt/plover.AppImage $(curl -s https://api.github.com/repos/openstenoproject/plover/releases/latest | grep browser_download_url | grep 'AppImage' | cut -d '"' -f 4)
 sudo chmod +x /opt/plover.AppImage
+
+# Create Plover systemd service file
+echo "[Unit]
+Description=Plover Stenography
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/opt/plover.AppImage
+
+[Install]
+WantedBy=multi-user.target" | sudo tee /etc/systemd/system/plover.service
+
+# Enable Plover service
+sudo systemctl daemon-reload
+sudo systemctl enable plover.service
